@@ -2,16 +2,18 @@ name: Long Tests
 
 on: [push]
 
-jobs:
-  env:
+defaults:
+  run:
     working-directory: ./helloworld-test-sample
-
+    
+jobs:
+  
   build:
     name: ${{ matrix.os }} ${{ matrix.version }}
     runs-on: ${{ matrix.os }}
     env:
       MY_TEST_ENV_VAR: "HELLO WORLD"
-
+      
     timeout-minutes: 20
     strategy:
       fail-fast: false
