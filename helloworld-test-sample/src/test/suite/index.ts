@@ -11,6 +11,8 @@ export function run(): Promise<void> {
 
 	const testsRoot = path.resolve(__dirname, '..');
 
+	console.log(`process env: ${JSON.stringify(process.env, null, 2)}`);
+
 	return new Promise((c, e) => {
 		glob('**/**.test.js', { cwd: testsRoot }, (err, files) => {
 			if (err) {
